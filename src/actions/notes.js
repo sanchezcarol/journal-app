@@ -50,3 +50,19 @@ export const setNotes = (notes) => {
     }
 
 }
+
+export const saveNote = (note) => {
+
+    return async(dispatch,getState) => {
+        const uid = getState().auth.uid;
+
+        if(!note.url) delete note.url
+
+        const noteToFirestore = {...note};
+        delete noteToFirestore.id;
+
+        await db.doc(`${uid}/journal/notes/${note.id}`).update(noteToFirestore);
+
+    }
+
+} 
