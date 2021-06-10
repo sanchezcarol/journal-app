@@ -1,16 +1,24 @@
 .journal__main-content {
     display: flex;
+    z-index: 999;
 }
   
 .journal__sidebar {
-    background-color: $dark-grey;
+    background-image: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url('https://images.wallpaperscraft.com/image/laptop_mug_garland_151742_1920x1080.jpg'),
+    ;
     color: white;
     display: flex;
     flex-direction: column;
     height: 100vh;
     padding-left: 10px;
     padding-right: 10px;
-    width: 450px;
+    width: 400px;
+    
 }
 
 .journal__sidebar-navbar {
@@ -20,6 +28,9 @@
 
 .journal__sidebar-navbar h3 {
     font-weight: lighter;
+}
+.journal__content{
+    z-index: 999;
 }
 
 .journal__new-entry {
@@ -59,10 +70,11 @@
 .journal__entry {
     background-color: white;
     border-radius: 4px;
-    color: $dark-grey;
+    color: black;
     display: flex;
     margin-bottom: 10px;
     overflow: hidden;
+    justify-content: space-between;
 }
 
 
@@ -75,11 +87,14 @@
 
 .journal__entry-body {
     padding: 10px;
+  
+   
 }
 
 .journal__entry-title {
     font-size: 14px;
-    font-weight: bold;
+    font-weight: 500;
+   
 }
 
 .journal__entry-content {
@@ -96,5 +111,5 @@
 }
 
 .journal__entry-date span{
-    font-size: 12px;
+    font-size: 10px;
 }

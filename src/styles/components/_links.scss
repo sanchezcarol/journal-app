@@ -2,7 +2,8 @@
 .link{
     text-decoration: none;
     color: $dark-grey;
-
+    font-size: 15;
+    padding-left: 5px;
     &:hover{
         text-decoration: underline;
     }

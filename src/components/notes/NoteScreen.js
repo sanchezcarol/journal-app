@@ -9,11 +9,10 @@ export const NoteScreen = () => {
     const {active:note} = useSelector(state => state.notes);
     const dispatch = useDispatch();
     const [values, handleInputChange, reset] = useForm(note);
-    const {title,body,url} = values;
-    const activeId = useRef();
+    const {title,body} = values;
+    const activeId = useRef(note.id);
 
     useEffect(() => {
-
         if(note.id !== activeId.current){
             reset(note)    
             activeId.current = note.id
@@ -22,9 +21,10 @@ export const NoteScreen = () => {
     }, [note,reset])
 
     useEffect(() => {
-        dispatch(activeNote(values.id, values));
+        dispatch(activeNote(values.id, {...values}));
     }, [values,dispatch])
     
+
 
     return (
         <div className="notes__main-content">
@@ -52,10 +52,11 @@ export const NoteScreen = () => {
                 {
                     (note.url) &&
                     <div className="notes__image">
-                        <img src={url} alt="" />
+                        <img src={note.url} alt="" />
                     </div>
                 }
             </div>
+            
         </div>
     )
 }

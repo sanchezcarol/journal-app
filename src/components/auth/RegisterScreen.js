@@ -35,13 +35,13 @@ export const RegisterScreen = () => {
             dispatch(uiSetError('Name is required'))
             return false;
         } else if( !validator.isEmail(email) ){
-            dispatch(uiSetError('email is not valid'))
+            dispatch(uiSetError('Email is not valid'))
             return false
         } else if(password.trim().length < 5){
-            dispatch(uiSetError('password should be at least 6 characters'))
+            dispatch(uiSetError('Password should be at least 6 characters'))
             return false;
         } else if( password !== password2 ){
-            dispatch(uiSetError('password not match'))
+            dispatch(uiSetError('Password not match'))
             return false;
         }
 
@@ -51,8 +51,8 @@ export const RegisterScreen = () => {
 
 
     return (
-        <>
-            <h3 className="auth__title">Register</h3>
+        <div className="animate__animated animate__fadeIn animate__faster">
+            <h3 className="auth__title ">Register</h3>
 
             {
                 (msgError) &&
@@ -101,6 +101,6 @@ export const RegisterScreen = () => {
                     Already register?
                 </Link>
             </form>
-        </>
+        </div>
     )
 }

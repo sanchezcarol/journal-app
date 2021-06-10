@@ -18,19 +18,23 @@ export const AppRouter = () => {
     useEffect(() => {
         
         firebase.auth().onAuthStateChanged(async(user) => {
+            
             if(user?.uid){
+               
                 dispatch(login(user.uid, user.displayName))    
                 setIsLoggedIn(true);
                 dispatch(startLoadingNotes(user.uid))
+            }else {
+                setIsLoggedIn( false );
             }
             
             setChecking(false);
         })
 
-    }, [dispatch,setChecking,setIsLoggedIn]);
+    }, [dispatch, setChecking, setIsLoggedIn]);
 
     if(checking){
-        return(<h1>Please wait...</h1>)
+        return(<div className="app" ><i class="fas fa-spinner fa-3x"></i> </div>)
     }
 
     return (

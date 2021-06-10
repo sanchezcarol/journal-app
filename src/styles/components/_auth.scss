@@ -1,6 +1,9 @@
 
+//import logo from '../'
+
 .auth__main{
-    background-color: $primary;
+    background: url('https://images.wallpaperscraft.com/image/laptop_mug_garland_151742_1920x1080.jpg');
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,25 +13,37 @@
     
 }
 
+.auth__main:after{
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0.7);
+  }
+
 .auth__box-container{
     background-color: white;
-    box-shadow: 0px 3px $dark-grey;
+    box-shadow: -1px 4px 28px 0px rgba(0,0,0,0.75);
     border-radius: 2px;
     padding: 20px;
     width: 250px;
+    z-index: 999;
 }
 
 .auth__title{
     color: darken($color: $primary, $amount:20 );
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    text-align: center;
 }
 
 .auth__input{
     color: $dark-grey;
     border: 0px;
     border-bottom: 1px solid $light-grey;
-    font-size: 16px;
-    margin-bottom: 10px;
+    font-size: 14px;
+    margin-bottom: 15px;
     height: 20px;
     width: 100%;
     transition: border-bottom .3s ease;
@@ -39,6 +54,10 @@
     }
 }
 
+.auth__signup{
+    font-size: 15px;
+}
+
 .auth__social-networks{
     align-items: center;
     display: flex;
@@ -47,15 +66,16 @@
     padding-top: 20px;
     padding-bottom: 20px;
     width: 100%;
+    font-size: 15px;
 }
 
 .auth__alert-error {
-    background-color: red;
-    border-radius: 5px;
-    color: white;
+    
+    
+    color: red;
     display: flex;
-    justify-content: center;
+    justify-content: left;
     margin-bottom: 10px;
-    padding: 5px;
+    padding: 5px 0;
 
 }

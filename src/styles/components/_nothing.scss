@@ -1,12 +1,14 @@
 .nothing__main-content{
     align-items: center;
-    background-color: $primary;
-    color: white;
+    background-image: url('https://images.pexels.com/photos/5797908/pexels-photo-5797908.jpeg?cs=srgb&dl=pexels-ann-nekr-5797908.jpg&fm=jpg');
+    background-color: white;
+    background-size: cover;
+    color: black;
     display: flex;
     flex-direction: column;
     justify-content: center;
     height: 100vh;
-
+    
     p{
         text-align: center;
     }
